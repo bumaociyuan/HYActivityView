@@ -12,7 +12,7 @@
 @interface ViewController ()
 
 @property (nonatomic, strong) UIButton *button;
-
+@property (nonatomic, strong) UIImageView *imageView;
 @property (nonatomic, strong) HYActivityView *activityView;
 
 @end
@@ -35,15 +35,21 @@
     
     self.button = [UIButton buttonWithType:UIButtonTypeRoundedRect];
     [self.button setTitle:@"press button" forState:UIControlStateNormal];
+    [self.button setTitleColor:[UIColor redColor] forState:UIControlStateNormal];
     [self.button sizeToFit];
     [self.button addTarget:self action:@selector(buttonClicked:) forControlEvents:UIControlEventTouchUpInside];
-    [self.view addSubview:self.button];
     
     self.view.translatesAutoresizingMaskIntoConstraints = NO;
     self.button.translatesAutoresizingMaskIntoConstraints = NO;
     
     [self.view setNeedsUpdateConstraints];
-    
+    UIImage *image = [UIImage imageNamed:@"test.jpg"];
+    UIImageView *imageView = [[UIImageView alloc]initWithImage:image];
+    imageView.translatesAutoresizingMaskIntoConstraints = NO;
+    [self.view addSubview:imageView];
+    self.imageView = imageView;
+    [self.view addSubview:self.button];
+ 
 }
 
 - (void)updateViewConstraints
@@ -55,6 +61,11 @@
     constraint = [NSLayoutConstraint constraintWithItem:self.button attribute:NSLayoutAttributeCenterY relatedBy:NSLayoutRelationEqual toItem:self.view attribute:NSLayoutAttributeCenterY multiplier:1 constant:0];
     [self.view addConstraint:constraint];
     
+    constraint = [NSLayoutConstraint constraintWithItem:self.imageView attribute:NSLayoutAttributeWidth relatedBy:NSLayoutRelationEqual toItem:self.view attribute:NSLayoutAttributeWidth multiplier:1 constant:0];
+    [self.view addConstraint:constraint];
+    
+    constraint = [NSLayoutConstraint constraintWithItem:self.imageView attribute:NSLayoutAttributeHeight relatedBy:NSLayoutRelationEqual toItem:self.view attribute:NSLayoutAttributeHeight multiplier:1 constant:0];
+    [self.view addConstraint:constraint];
 }
 
 - (void)addButtonClicked:(UIButton *)button
@@ -68,7 +79,7 @@
 - (void)buttonClicked:(UIButton *)button
 {
     if (!self.activityView) {
-        self.activityView = [[HYActivityView alloc]initWithTitle:@"分享到" referView:self.view];
+        self.activityView = [[HYActivityView alloc]initWithTitle:@"分享到" referView:self.view.window];
         
         //横屏会变成一行6个, 竖屏无法一行同时显示6个, 会自动使用默认一行4个的设置.
         self.activityView.numberOfButtonPerLine = 3;

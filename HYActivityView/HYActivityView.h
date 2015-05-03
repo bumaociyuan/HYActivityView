@@ -7,7 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
-
+#import "FXBlurView.h"
 @class ButtonView;
 @class HYActivityView;
 
@@ -25,7 +25,7 @@ typedef void(^ButtonViewHandler)(ButtonView *buttonView);
 
 @end
 
-@interface HYActivityView : UIView
+@interface HYActivityView : FXBlurView
 
 //背景颜色, 默认是透明度0.95的白色
 @property (nonatomic, strong) UIColor *bgColor;
@@ -37,10 +37,7 @@ typedef void(^ButtonViewHandler)(ButtonView *buttonView);
 @property (nonatomic, strong) UIButton *cancelButton;
 
 //一行有多少个, 默认是4. iPhone竖屏不会多于4, 横屏不会多于6. ipad没试, 不建议ipad用这个.
-@property (nonatomic, assign) int numberOfButtonPerLine;
-
-//是否可以通过下滑手势关闭视图, 默认为YES
-@property (nonatomic, assign) BOOL useGesturer;
+@property (nonatomic, assign) NSInteger numberOfButtonPerLine;
 
 //是否正在显示
 @property (nonatomic, getter = isShowing) BOOL show;
