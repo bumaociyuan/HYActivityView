@@ -45,10 +45,8 @@ typedef void(^ButtonViewHandler)(ButtonView *buttonView);
 //是否正在显示
 @property (nonatomic, getter = isShowing) BOOL show;
 
-//初始化
 - (id)initWithTitle:(NSString *)title referView:(UIView *)referView;
 
-//添加buttonView, HYActivityView会根据buttonView的数量自动变高, 但是没有对高度上限做过多处理，莫要丧心病狂的添加太多.
 - (void)addButtonView:(ButtonView *)buttonView;
 
 - (void)show;

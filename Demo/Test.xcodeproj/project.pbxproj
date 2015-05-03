@@ -9,7 +9,6 @@
 /* Begin PBXBuildFile section */
 		6E186092182CD3BD00B21899 /* share_platform_qqfriends@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 6E18608C182CD3BC00B21899 /* share_platform_qqfriends@2x.png */; };
 		6E186094182CD3BD00B21899 /* share_platform_wechattimeline@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 6E18608E182CD3BD00B21899 /* share_platform_wechattimeline@2x.png */; };
-		6E1F0E8E182A171D00F762F5 /* HYActivityView.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E1F0E8D182A171D00F762F5 /* HYActivityView.m */; };
 		6E1F0E90182A2BEC00F762F5 /* share_platform_sina@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 6E1F0E8F182A2BEC00F762F5 /* share_platform_sina@2x.png */; };
 		6EABB5D618278FA4009DFAD6 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6EABB5D518278FA4009DFAD6 /* UIKit.framework */; };
 		6EABB5D818278FA4009DFAD6 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6EABB5D718278FA4009DFAD6 /* Foundation.framework */; };
@@ -21,13 +20,12 @@
 		6EABB5EA18278FA4009DFAD6 /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 6EABB5E918278FA4009DFAD6 /* Default@2x.png */; };
 		6EABB5EC18278FA4009DFAD6 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 6EABB5EB18278FA4009DFAD6 /* Default-568h@2x.png */; };
 		6EABB5F418278FB3009DFAD6 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6EABB5F318278FB3009DFAD6 /* ViewController.m */; };
+		FBD4E15F1AF5EFD5003C8D69 /* HYActivityView.m in Sources */ = {isa = PBXBuildFile; fileRef = FBD4E15E1AF5EFD5003C8D69 /* HYActivityView.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		6E18608C182CD3BC00B21899 /* share_platform_qqfriends@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "share_platform_qqfriends@2x.png"; sourceTree = "<group>"; };
 		6E18608E182CD3BD00B21899 /* share_platform_wechattimeline@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "share_platform_wechattimeline@2x.png"; sourceTree = "<group>"; };
-		6E1F0E8C182A171D00F762F5 /* HYActivityView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HYActivityView.h; sourceTree = "<group>"; };
-		6E1F0E8D182A171D00F762F5 /* HYActivityView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HYActivityView.m; sourceTree = "<group>"; };
 		6E1F0E8F182A2BEC00F762F5 /* share_platform_sina@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "share_platform_sina@2x.png"; sourceTree = "<group>"; };
 		6EABB5D218278FA4009DFAD6 /* Test.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Test.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6EABB5D518278FA4009DFAD6 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
@@ -44,6 +42,8 @@
 		6EABB5EB18278FA4009DFAD6 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
 		6EABB5F218278FB3009DFAD6 /* ViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
 		6EABB5F318278FB3009DFAD6 /* ViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		FBD4E15D1AF5EFD5003C8D69 /* HYActivityView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HYActivityView.h; sourceTree = "<group>"; };
+		FBD4E15E1AF5EFD5003C8D69 /* HYActivityView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HYActivityView.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -100,13 +100,12 @@
 		6EABB5DB18278FA4009DFAD6 /* Test */ = {
 			isa = PBXGroup;
 			children = (
+				FBD4E15C1AF5EFD5003C8D69 /* HYActivityView */,
 				6E186088182CD38A00B21899 /* image */,
 				6EABB5E418278FA4009DFAD6 /* AppDelegate.h */,
 				6EABB5E518278FA4009DFAD6 /* AppDelegate.m */,
 				6EABB5F218278FB3009DFAD6 /* ViewController.h */,
 				6EABB5F318278FB3009DFAD6 /* ViewController.m */,
-				6E1F0E8C182A171D00F762F5 /* HYActivityView.h */,
-				6E1F0E8D182A171D00F762F5 /* HYActivityView.m */,
 				6EABB5DC18278FA4009DFAD6 /* Supporting Files */,
 			);
 			path = Test;
@@ -124,6 +123,15 @@
 				6EABB5EB18278FA4009DFAD6 /* Default-568h@2x.png */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		FBD4E15C1AF5EFD5003C8D69 /* HYActivityView */ = {
+			isa = PBXGroup;
+			children = (
+				FBD4E15D1AF5EFD5003C8D69 /* HYActivityView.h */,
+				FBD4E15E1AF5EFD5003C8D69 /* HYActivityView.m */,
+			);
+			path = HYActivityView;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -194,10 +202,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FBD4E15F1AF5EFD5003C8D69 /* HYActivityView.m in Sources */,
 				6EABB5E218278FA4009DFAD6 /* main.m in Sources */,
 				6EABB5E618278FA4009DFAD6 /* AppDelegate.m in Sources */,
 				6EABB5F418278FB3009DFAD6 /* ViewController.m in Sources */,
-				6E1F0E8E182A171D00F762F5 /* HYActivityView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
