@@ -464,7 +464,7 @@
     return
     underlyingLayer && !underlyingLayer.hidden &&
     self.blurEnabled && [FXBlurScheduler sharedInstance].blurEnabled &&
-    !CGRectIsEmpty([self.layer.presentationLayer ?: self.layer bounds]) && !CGRectIsEmpty(underlyingLayer.bounds);
+    !CGRectIsEmpty([(CALayer *)(self.layer.presentationLayer ?: self.layer) bounds]) && !CGRectIsEmpty(underlyingLayer.bounds);
 }
 
 - (void)displayLayer:(__unused CALayer *)layer

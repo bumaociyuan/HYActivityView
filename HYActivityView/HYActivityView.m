@@ -19,7 +19,7 @@
 
 @property (nonatomic, strong) UIImage *image;
 
-@property (nonatomic, assign) ButtonViewHandler handler;
+@property (nonatomic, copy) ButtonViewHandler handler;
 
 @end
 
@@ -47,6 +47,7 @@
     self.textLabel.text = self.text;
     self.textLabel.backgroundColor = [UIColor clearColor];
     self.textLabel.font = [UIFont systemFontOfSize:BUTTON_VIEW_FONT_SIZE];
+    self.textLabel.textColor = [UIColor colorWithWhite:0.314 alpha:1.000];
     self.textLabel.textAlignment = NSTextAlignmentCenter;
 
     self.imageButton = [UIButton buttonWithType:UIButtonTypeCustom];
@@ -181,7 +182,7 @@
     self.backgroundColor = [UIColor colorWithRed:0 green:0 blue:0 alpha:0.3f];
 
     self.contentView = [[UIView alloc]init];
-    self.bgColor = [UIColor colorWithRed:1 green:1 blue:1 alpha:0.95f];
+    self.bgColor = [UIColor whiteColor];
     [self addSubview:self.contentView];
 
     self.closeButton = [UIButton buttonWithType:UIButtonTypeCustom];
@@ -190,14 +191,16 @@
 
     self.titleLabel = [[UILabel alloc]init];
     self.titleLabel.backgroundColor = [UIColor clearColor];
+    self.titleLabel.textColor = [UIColor colorWithWhite:0.314 alpha:1.000];
     self.titleLabel.textAlignment = NSTextAlignmentCenter;
-    self.titleLabel.font = [UIFont systemFontOfSize:17.f];
+    self.titleLabel.font = [UIFont systemFontOfSize:BUTTON_VIEW_FONT_SIZE];
     self.titleLabel.text = self.title;
     [self.contentView addSubview:self.titleLabel];
 
     self.cancelButton = [UIButton buttonWithType:UIButtonTypeCustom];
     [self.cancelButton setTitle:@"取 消" forState:UIControlStateNormal];
-    [self.cancelButton setTitleColor:[UIColor orangeColor] forState:UIControlStateNormal];
+    [self.cancelButton setBackgroundColor:[UIColor colorWithWhite:0.965 alpha:1.000]];
+    [self.cancelButton setTitleColor:[UIColor colorWithWhite:0.314 alpha:1.000] forState:UIControlStateNormal];
     [self.cancelButton addTarget:self action:@selector(closeButtonClicked:) forControlEvents:UIControlEventTouchUpInside];
     [self.contentView addSubview:self.cancelButton];
 
@@ -267,7 +270,7 @@
     [self.iconView addConstraint:self.iconViewHeightConstraint];
 
     //垂直方向titleLabel挨着iconView挨着cancelButton
-    constraints = [NSLayoutConstraint constraintsWithVisualFormat:@"V:|-8-[titleLabel(==30)]-[iconView]-[cancelButton(==30)]-8-|" options:0 metrics:nil views:views];
+    constraints = [NSLayoutConstraint constraintsWithVisualFormat:@"V:|-8-[titleLabel(==30)]-[iconView]-[cancelButton(==44)]|" options:0 metrics:nil views:views];
     [self.contentView addConstraints:constraints];
 }
 

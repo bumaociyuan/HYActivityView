@@ -7,7 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "FXBlurView.h"
+//#import "FXBlurView.h"
 @class ButtonView;
 @class HYActivityView;
 
@@ -25,9 +25,9 @@ typedef void(^ButtonViewHandler)(ButtonView *buttonView);
 
 @end
 
-@interface HYActivityView : FXBlurView
+@interface HYActivityView : UIView
 
-//背景颜色, 默认是透明度0.95的白色
+//背景颜色, 默认是[UIColor whiteColor]
 @property (nonatomic, strong) UIColor *bgColor;
 
 //标题
