@@ -8,7 +8,7 @@
 
 #import "HYActivityView.h"
 
-#define BUTTON_VIEW_SIDE      75.f
+#define BUTTON_VIEW_SIDE      80
 #define BUTTON_VIEW_FONT_SIZE 11.f
 
 #pragma mark - ButtonView
@@ -77,11 +77,11 @@
     [self addConstraints:constraints];
 
     //imageView距离view左右各10, imageView的宽为55
-    constraints = [NSLayoutConstraint constraintsWithVisualFormat:@"H:|-10-[imageButton(55)]-10-|" options:0 metrics:nil views:views];
+    constraints = [NSLayoutConstraint constraintsWithVisualFormat:@"H:|-10-[imageButton(60)]-10-|" options:0 metrics:nil views:views];
     [self addConstraints:constraints];
 
     //竖直方向imageView和textLabel在一条直线上, 距离10, imageView的高为55
-    constraints = [NSLayoutConstraint constraintsWithVisualFormat:@"V:|[imageButton(55)]-10-[textLabel]|" options:NSLayoutFormatAlignAllCenterX metrics:nil views:views];
+    constraints = [NSLayoutConstraint constraintsWithVisualFormat:@"V:|[imageButton(60)]-10-[textLabel]|" options:NSLayoutFormatAlignAllCenterX metrics:nil views:views];
     [self addConstraints:constraints];
 }
 
@@ -272,7 +272,11 @@
     [self.iconView addConstraint:self.iconViewHeightConstraint];
 
     //垂直方向titleLabel挨着iconView挨着cancelButton
-    constraints = [NSLayoutConstraint constraintsWithVisualFormat:@"V:|-8-[titleLabel(==30)]-[iconView]-[cancelButton(==44)]|" options:0 metrics:nil views:views];
+    if (self.titleLabel.text.length) {
+            constraints = [NSLayoutConstraint constraintsWithVisualFormat:@"V:|-8-[titleLabel(==30)]-[iconView]-[cancelButton(==44)]|" options:0 metrics:nil views:views];
+    } else {
+            constraints = [NSLayoutConstraint constraintsWithVisualFormat:@"V:|-8-[titleLabel]-[iconView]-[cancelButton(==44)]|" options:0 metrics:nil views:views];
+    }
     [self.contentView addConstraints:constraints];
 }
 
