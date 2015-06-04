@@ -8,8 +8,8 @@
 
 #import "HYActivityView.h"
 
-#define BUTTON_VIEW_SIDE      70.f
-#define BUTTON_VIEW_FONT_SIZE 13.f
+#define BUTTON_VIEW_SIDE      75.f
+#define BUTTON_VIEW_FONT_SIZE 11.f
 
 #pragma mark - ButtonView
 
@@ -65,22 +65,23 @@
     NSDictionary *views = @{ @"textLabel": self.textLabel, @"imageButton": self.imageButton };
     NSArray *constraints = nil;
 
-    //view的宽高为70
-    constraint = [NSLayoutConstraint constraintWithItem:self attribute:NSLayoutAttributeHeight relatedBy:NSLayoutRelationEqual toItem:nil attribute:NSLayoutAttributeNotAnAttribute multiplier:1 constant:BUTTON_VIEW_SIDE];
+
+    
+    constraint = [NSLayoutConstraint constraintWithItem:self attribute:NSLayoutAttributeHeight relatedBy:NSLayoutRelationEqual toItem:nil attribute:NSLayoutAttributeNotAnAttribute multiplier:1 constant:85];
     [self addConstraint:constraint];
-    constraint = [NSLayoutConstraint constraintWithItem:self attribute:NSLayoutAttributeWidth relatedBy:NSLayoutRelationEqual toItem:nil attribute:NSLayoutAttributeNotAnAttribute multiplier:1 constant:BUTTON_VIEW_SIDE];
+    constraint = [NSLayoutConstraint constraintWithItem:self attribute:NSLayoutAttributeWidth relatedBy:NSLayoutRelationEqual toItem:nil attribute:NSLayoutAttributeNotAnAttribute multiplier:1 constant:75];
     [self addConstraint:constraint];
 
     //label紧贴view的左右
     constraints = [NSLayoutConstraint constraintsWithVisualFormat:@"H:|[textLabel]|" options:0 metrics:nil views:views];
     [self addConstraints:constraints];
 
-    //imageView距离view左右各10, imageView的宽为50
-    constraints = [NSLayoutConstraint constraintsWithVisualFormat:@"H:|-10-[imageButton(50)]-10-|" options:0 metrics:nil views:views];
+    //imageView距离view左右各10, imageView的宽为55
+    constraints = [NSLayoutConstraint constraintsWithVisualFormat:@"H:|-10-[imageButton(55)]-10-|" options:0 metrics:nil views:views];
     [self addConstraints:constraints];
 
-    //竖直方向imageView和textLabel在一条直线上, 并且挨着, imageView的高为50
-    constraints = [NSLayoutConstraint constraintsWithVisualFormat:@"V:|[imageButton(50)][textLabel]|" options:NSLayoutFormatAlignAllCenterX metrics:nil views:views];
+    //竖直方向imageView和textLabel在一条直线上, 距离10, imageView的高为55
+    constraints = [NSLayoutConstraint constraintsWithVisualFormat:@"V:|[imageButton(55)]-10-[textLabel]|" options:NSLayoutFormatAlignAllCenterX metrics:nil views:views];
     [self addConstraints:constraints];
 }
 
@@ -201,6 +202,7 @@
     [self.cancelButton setTitle:@"取 消" forState:UIControlStateNormal];
     [self.cancelButton setBackgroundColor:[UIColor colorWithWhite:0.965 alpha:1.000]];
     [self.cancelButton setTitleColor:[UIColor colorWithWhite:0.314 alpha:1.000] forState:UIControlStateNormal];
+    self.cancelButton.titleLabel.font = [UIFont systemFontOfSize:15];
     [self.cancelButton addTarget:self action:@selector(closeButtonClicked:) forControlEvents:UIControlEventTouchUpInside];
     [self.contentView addSubview:self.cancelButton];
 
